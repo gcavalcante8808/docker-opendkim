@@ -1,0 +1,14 @@
+version: '2'
+services:
+    opendkim:
+        image: opendkim
+        restart: always
+        hostname: mail
+        domainname: example.com
+        environment:
+          DKIM_SHORTDOMAIN: example
+          POSTFIX_DOMAIN: example.com
+          MAIL_DOMAIN: mail.example.com
+        ports:
+         - "5500:5500"
+
